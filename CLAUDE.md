@@ -41,10 +41,12 @@ gh pr merge --squash --delete-branch
 ```
 
 ### 6. Launch
-Open the site in Chrome to verify:
+Open the site in Chrome to verify — **always do this before merging**:
 ```
 open -a "Google Chrome" /Users/eoolsen/source/randersoejenklinik/index.html
 ```
+
+Wait for user confirmation before proceeding to merge.
 
 ## Notes
 
