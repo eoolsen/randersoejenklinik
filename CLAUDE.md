@@ -25,6 +25,8 @@ git checkout -b <short-descriptive-name>
 ### 3. Code change
 Make the change. Keep it focused — don't refactor or improve things outside the scope of the task.
 
+**Cache-busting:** whenever you change `css/style.css`, bump the version query on its `<link>` in `index.html` (e.g. `css/style.css?v=2` → `?v=3`). Browsers cache the stylesheet aggressively; the new URL forces every visitor to fetch the updated CSS without a hard refresh.
+
 ### 4. PR
 Commit and open a pull request against `main`:
 ```
@@ -53,3 +55,4 @@ Wait for user confirmation before proceeding to merge.
 - Always run the full cycle for any visible change — no direct commits to `main`
 - After merging, GitHub Pages rebuilds automatically (allow ~1 min for live URL to update)
 - The live URL is https://eoolsen.github.io/randersoejenklinik/
+- Bump the `css/style.css?v=` query in `index.html` on every CSS change so cached stylesheets don't mask the update
