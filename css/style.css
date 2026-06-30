@@ -92,11 +92,11 @@ img {
 
 /* ---- Top bar ---- */
 .top-bar {
-  background: linear-gradient(180deg, var(--white), var(--blue-light));
-  color: var(--gray-text);
+  background: #bcd2e8;
+  color: var(--blue-deep);
   font-size: 0.82rem;
   padding: 0.5rem 0;
-  border-bottom: 1px solid var(--gray-mid);
+  border-bottom: 1px solid rgba(28,72,101,0.12);
 }
 
 .top-bar .container {
@@ -130,8 +130,9 @@ img {
 
 /* ---- Site header ---- */
 .site-header {
-  background: var(--white);
-  border-bottom: 1px solid var(--gray-mid);
+  background: linear-gradient(180deg, #bcd2e8, #a7c4de);
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--gold), var(--blue)) 1;
   padding: 1.5rem 0;
 }
 
@@ -184,7 +185,7 @@ img {
 
 .logo-tagline {
   font-size: 0.82rem;
-  color: var(--gray-text);
+  color: var(--blue-dark);
   letter-spacing: 0.03em;
 }
 
