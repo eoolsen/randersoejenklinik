@@ -248,7 +248,7 @@
     <div class="container">
       <div class="hero-content">
         <p class="hero-eyebrow">Speciallæge i øjensygdomme — Randers</p>
-        <h1>Professionel øjenpleje med omsorg og ekspertise</h1>
+        <h1>Professionel øjenbehandling med omsorg og ekspertise</h1>
         <p>Randers Øjenklinik tilbyder undersøgelse og behandling af øjensygdomme med moderne udstyr og personlig service. Ingen henvisning fra egen læge er nødvendig.</p>
         <div>
           <a href="#kontakt" class="btn btn-gold">Book tid &rarr;</a>
@@ -699,6 +699,37 @@
         if (a.getAttribute('href') === '#' + current) a.classList.add('active');
       });
     });
+
+    // Scroll reveal — fade/slide elements in as they enter the viewport
+    (function () {
+      if (!('IntersectionObserver' in window)) return;
+      document.body.classList.add('js-reveal');
+
+      const targets = document.querySelectorAll(
+        '.hero-content, .title-bar, .section-title, .section-subtitle, ' +
+        '.service-card, .team-card, .info-box, .stats-grid > div, .contact-item'
+      );
+      targets.forEach(el => el.setAttribute('data-reveal', ''));
+
+      // Stagger items inside each grid for a cascading effect
+      document.querySelectorAll('.services-grid, .team-grid, .stats-grid, .info-grid')
+        .forEach(grid => {
+          Array.from(grid.children).forEach((child, i) => {
+            child.style.setProperty('--reveal-delay', (i % 4) * 0.08 + 's');
+          });
+        });
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in-view');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+      targets.forEach(el => io.observe(el));
+    })();
   </script>
 
 </body>
