@@ -68,6 +68,40 @@ img {
   display: block;
 }
 
+/* ---- Accessibility: focus + skip link ---- */
+:focus-visible {
+  outline: 3px solid var(--blue-dark);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* On the dark hero, a light ring reads better */
+.hero a:focus-visible,
+.btn:focus-visible {
+  outline-color: #fff;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 2000;
+  background: var(--blue-deep);
+  color: #fff;
+  padding: 0.7rem 1.1rem;
+  font-weight: 700;
+  border-radius: 0 0 var(--radius-sm) 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* Remove the focus ring from the hero wrapper itself (skip-link target) */
+.hero:focus {
+  outline: none;
+}
+
 /* ---- Scroll reveal (only active when JS adds .js-reveal to <body>) ---- */
 .js-reveal [data-reveal] {
   opacity: 0;
@@ -327,7 +361,19 @@ nav .container {
   background: var(--heading);
   border-radius: 2px;
   margin: 5px 0;
-  transition: 0.3s var(--ease);
+  transition: transform 0.3s var(--ease), opacity 0.2s var(--ease);
+}
+
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ---- Container ---- */
@@ -445,7 +491,10 @@ nav .container {
 }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
   padding: 0.9rem 2rem;
   border-radius: var(--radius-pill);
   font-weight: 700;
@@ -454,6 +503,15 @@ nav .container {
   border: 2px solid transparent;
   text-decoration: none;
   transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
 }
 
 .btn-gold {
@@ -1309,11 +1367,59 @@ footer ul li a:hover {
   }
 
   .btn {
-    display: block;
-    text-align: center;
+    display: flex;
+    width: 100%;
   }
 
   .btn-outline {
     margin-top: 0.75rem;
+  }
+}
+
+/* ---- Mobile sticky call bar ---- */
+.mobile-call {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 500;
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.02rem;
+    letter-spacing: 0.01em;
+    padding: 1rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    text-decoration: none;
+    box-shadow: 0 -4px 20px rgba(28,72,101,0.22);
+  }
+
+  .mobile-call:hover,
+  .mobile-call:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .mobile-call svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    flex-shrink: 0;
+  }
+
+  /* Keep the footer clear of the fixed bar */
+  body {
+    padding-bottom: 60px;
   }
 }

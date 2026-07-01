@@ -160,9 +160,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/style.css?v=4" />
 </head>
 <body>
+
+  <a href="#main" class="skip-link">Spring til indhold</a>
 
   <!-- ===== TOP BAR ===== -->
   <div class="top-bar">
@@ -205,11 +207,11 @@
   <!-- ===== NAVIGATION ===== -->
   <nav id="top">
     <div class="container">
-      <button class="nav-toggle" aria-label="Åbn menu" onclick="toggleMenu()">
+      <button class="nav-toggle" aria-label="Åbn menu" aria-expanded="false" aria-controls="nav-links" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#klinikken">Klinikken</a></li>
+        <li><a href="#top">Klinikken</a></li>
         <li class="has-dropdown">
           <a href="#ydelser" onclick="toggleDropdown(event, this.parentElement)">Undersøgelser &amp; Operationer ▾</a>
           <div class="dropdown">
@@ -230,7 +232,7 @@
   </nav>
 
   <!-- ===== HERO ===== -->
-  <section class="hero">
+  <section class="hero" id="main" tabindex="-1">
     <div class="hero-bg-pattern"></div>
     <div class="hero-eye" aria-hidden="true">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -251,7 +253,10 @@
         <h1>Professionel øjenbehandling med omsorg og ekspertise</h1>
         <p>Randers Øjenklinik tilbyder undersøgelse og behandling af øjensygdomme med moderne udstyr og personlig service. Ingen henvisning fra egen læge er nødvendig.</p>
         <div>
-          <a href="#kontakt" class="btn btn-gold">Book tid &rarr;</a>
+          <a href="#kontakt" class="btn btn-gold">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Ring og book tid
+          </a>
           <a href="#ydelser" class="btn btn-outline">Se vores ydelser</a>
         </div>
       </div>
@@ -562,7 +567,7 @@
                 <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 <div class="contact-item-text">
                   <strong>Adresse</strong>
-                  <span>Dytmærsken 12<br>8900 Randers C</span>
+                  <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Dytm%C3%A6rsken%2012%2C%208900%20Randers%20C" target="_blank" rel="noopener" aria-label="Åbn adressen i Google Maps">Dytmærsken 12<br>8900 Randers C</a></span>
                 </div>
               </div>
 
@@ -604,8 +609,7 @@
           <p>Professionel øjenbehandling med moderne udstyr og personlig omsorg. Speciallæge Marianne Berthelsen har mere end 30 års erfaring inden for øjensygdomme.</p>
           <br>
           <address>
-            Dytmærsken 12<br>
-            8900 Randers C<br>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Dytm%C3%A6rsken%2012%2C%208900%20Randers%20C" target="_blank" rel="noopener" aria-label="Åbn adressen i Google Maps">Dytmærsken 12<br>8900 Randers C</a><br>
             Tlf. <a href="tel:86437311">86 43 73 11</a>
           </address>
         </div>
@@ -613,7 +617,7 @@
         <div>
           <h4>Navigation</h4>
           <ul>
-            <li><a href="#klinikken">Klinikken</a></li>
+            <li><a href="#top">Klinikken</a></li>
             <li><a href="#ydelser">Ydelser</a></li>
             <li><a href="#hvem-er-vi">Hvem er vi</a></li>
             <li><a href="#priser">Priser &amp; Info</a></li>
@@ -641,6 +645,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- ===== MOBILE STICKY CALL BAR ===== -->
+  <a class="mobile-call" href="tel:86437311">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Ring og book — 86 43 73 11
+  </a>
 
   <!-- ===== TEAM MODAL ===== -->
   <div id="team-modal" class="team-modal-overlay" onclick="closeTeam(event)">
@@ -672,7 +682,11 @@
 
     function toggleMenu() {
       const nav = document.getElementById('nav-links');
-      nav.classList.toggle('open');
+      const btn = document.querySelector('.nav-toggle');
+      const open = nav.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Luk menu' : 'Åbn menu');
     }
 
     function toggleDropdown(e, li) {
@@ -682,6 +696,33 @@
         li.classList.toggle('open');
       }
     }
+
+    function closeMenu() {
+      const nav = document.getElementById('nav-links');
+      const btn = document.querySelector('.nav-toggle');
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Åbn menu');
+    }
+
+    // Close the mobile menu after navigating to a section
+    document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function () {
+        // Don't close when this tap only expands the dropdown on mobile
+        if (this.parentElement.classList.contains('has-dropdown') && window.innerWidth <= 768) return;
+        closeMenu();
+      });
+    });
+
+    // Scroll to the very top for "#top" links — the sticky <nav> can't be
+    // anchored to (it's already pinned at top), so do it manually.
+    document.querySelectorAll('a[href="#top"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
 
     // Highlight active nav link on scroll
     const sections = document.querySelectorAll('section[id], nav[id]');
