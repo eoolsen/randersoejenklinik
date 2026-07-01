@@ -96,12 +96,13 @@ by the owner.** When photos land: replace/augment the gradient hero, add an
 ## Prioritized punch-list
 
 ### P1 — do first (audience-critical)
-- [ ] Add visible `:focus-visible` states + skip-to-content link + hamburger
-      `aria-expanded`
+- [x] Add visible `:focus-visible` states + skip-to-content link + hamburger
+      `aria-expanded` _(done — PR #9)_
 - [ ] Contrast fixes (gold hover) and bump component body text toward `1rem`
 - [ ] _(deferred)_ Replace/augment gradient hero with authentic clinic +
       practitioner photography — **owner to supply photos**
-- [ ] Make booking CTA real or honestly labeled; prominent phone CTA on mobile
+- [x] Make booking CTA real or honestly labeled; prominent phone CTA on mobile
+      _(done — PR #9: relabelled "Ring og book tid" + mobile sticky call bar)_
 
 ### P2 — elevate
 - [ ] Pressure-test a lighter/white header vs. the current heavy steel-blue
