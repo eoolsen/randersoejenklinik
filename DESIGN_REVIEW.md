@@ -110,9 +110,10 @@ by the owner.** When photos land: replace/augment the gradient hero, add an
 - [ ] Add favicon set; source the stat percentages
 
 ### P3 — refine
-- [ ] Drop heading weight to 700
-- [ ] Slightly stronger section-background contrast
-- [ ] Custom logo mark
+- [x] Drop heading weight to 700 _(done — PR #10: section titles 800 → 700)_
+- [x] Slightly stronger section-background contrast _(done — PR #10:
+      `.section-alt` now uses a deeper blue-tinted `--gray-alt`)_
+- [x] Custom logo mark _(done — PR #10: white almond, gold iris, dark pupil)_
 
 ---
 
