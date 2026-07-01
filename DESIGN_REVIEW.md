@@ -107,7 +107,9 @@ by the owner.** When photos land: replace/augment the gradient hero, add an
 ### P2 — elevate
 - [ ] Pressure-test a lighter/white header vs. the current heavy steel-blue
 - [ ] Introduce a type pairing (serif or display for headings)
-- [ ] Add favicon set; source the stat percentages
+- [x] Add favicon set _(done — PR #11: SVG + 32px PNG + apple-touch-icon,
+      theme-color)_
+- [ ] Source the stat percentages
 
 ### P3 — refine
 - [x] Drop heading weight to 700 _(done — PR #10: section titles 800 → 700)_
