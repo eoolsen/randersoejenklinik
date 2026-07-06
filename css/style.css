@@ -26,6 +26,7 @@
   /* Amber (the one accent) — replaces the old gold family */
   --gold:        #c0851f;
   --gold-bright: #d99a2b;
+  --gold-ink:    #8f6216;   /* amber dark enough for text on paper */
 
   /* Warm paper — replaces pure white and the cool greys */
   --bg:          #f4efe4;   /* page paper (no pure white)         */
@@ -119,10 +120,11 @@ img {
   border-radius: 3px;
 }
 
-/* On the dark hero, a light ring reads better */
+/* On the dark petrol surfaces, a light ring reads better */
 .hero a:focus-visible,
-.btn:focus-visible {
-  outline-color: #fff;
+.btn:focus-visible,
+footer a:focus-visible {
+  outline-color: #f2ead9;
 }
 
 .skip-link {
@@ -205,6 +207,19 @@ img {
 .top-bar-item svg {
   flex-shrink: 0;
   opacity: 0.6;
+}
+
+/* On phones the unbreakable groups would overflow the viewport:
+   let them wrap again and drop the hours line (it repeats in the
+   contact section and footer). */
+@media (max-width: 600px) {
+  .top-bar-item {
+    white-space: normal;
+  }
+
+  .top-bar-item:last-child {
+    display: none;
+  }
 }
 
 /* ---- Site header ---- */
@@ -314,7 +329,7 @@ nav .container {
   padding: 1.05rem 1.25rem;
   color: var(--heading);
   font-weight: 500;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
@@ -853,8 +868,8 @@ nav .container {
 }
 
 .team-modal-card {
-  background: #fff;
-  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border-radius: var(--radius);
   overflow: hidden;
   max-width: 340px;
   width: 100%;
@@ -890,7 +905,7 @@ nav .container {
 
 .team-modal-role {
   font-size: 0.88rem;
-  color: var(--gold);
+  color: var(--gold-ink);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
