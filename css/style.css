@@ -90,7 +90,7 @@ footer h4 {
 }
 
 /* Data / labels read like an instrument readout */
-.hero-eyebrow, .nav-links a, .stat-number,
+.hero-eyebrow, .nav-links a,
 .header-phone,
 .price-table td:last-child, .hours-table td:last-child {
   font-family: var(--font-mono);
@@ -910,51 +910,6 @@ nav .container {
   }
 }
 
-/* ---- Stats strip ---- */
-.stats-strip {
-  background: var(--blue-deep);
-  color: #f2ead9;
-  padding: var(--sp-4) 0;
-  border-top: 1px solid var(--blue-deep);
-  border-bottom: 1px solid var(--blue-deep);
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2rem;
-  text-align: center;
-}
-
-.stat-number {
-  position: relative;
-  display: inline-block;
-  font-size: 2.7rem;
-  font-weight: 600;
-  color: #f2ead9;
-  line-height: 1;
-  margin-bottom: 0.95rem;
-  padding-bottom: 0.65rem;
-  letter-spacing: -0.01em;
-}
-
-.stat-number::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 2px;
-  background: var(--gold-bright);
-}
-
-.stat-label {
-  font-size: 0.88rem;
-  color: rgba(242,234,217,0.72);
-  line-height: 1.45;
-}
-
 /* ---- Info / Prices ---- */
 .info-grid {
   display: grid;
@@ -1272,10 +1227,6 @@ footer ul li a:hover {
 
   .services-grid {
     grid-template-columns: 1fr;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr 1fr;
   }
 
   .btn {
