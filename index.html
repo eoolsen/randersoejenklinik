@@ -166,7 +166,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=11" />
+  <link rel="stylesheet" href="css/style.css?v=12" />
 </head>
 <body>
 
@@ -348,30 +348,6 @@
       </p>
     </div>
   </section>
-
-  <!-- ===== STATS ===== -->
-  <div class="stats-strip">
-    <div class="container">
-      <div class="stats-grid">
-        <div>
-          <div class="stat-number">93%</div>
-          <div class="stat-label">af patienter stoler på speciallægens undersøgelsesfærdigheder</div>
-        </div>
-        <div>
-          <div class="stat-number">85%</div>
-          <div class="stat-label">mener de modtager den rette behandling</div>
-        </div>
-        <div>
-          <div class="stat-number">82%</div>
-          <div class="stat-label">er tilfredse og vil anbefale klinikken</div>
-        </div>
-        <div>
-          <div class="stat-number">2×</div>
-          <div class="stat-label">akkrediteret under DDKM — 2018 og 2020</div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- ===== ABOUT ===== -->
   <section class="section section-alt" id="hvem-er-vi">
@@ -756,12 +732,12 @@
 
       const targets = document.querySelectorAll(
         '.hero-content, .title-bar, .section-title, .section-subtitle, ' +
-        '.service-card, .team-card, .info-box, .stats-grid > div, .contact-item'
+        '.service-card, .team-card, .info-box, .contact-item'
       );
       targets.forEach(el => el.setAttribute('data-reveal', ''));
 
       // Stagger items inside each grid for a cascading effect
-      document.querySelectorAll('.services-grid, .team-grid, .stats-grid, .info-grid')
+      document.querySelectorAll('.services-grid, .team-grid, .info-grid')
         .forEach(grid => {
           Array.from(grid.children).forEach((child, i) => {
             child.style.setProperty('--reveal-delay', (i % 4) * 0.08 + 's');
